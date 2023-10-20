@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
 const List = () => {
-    const [heroesList, setHeroesList] = useState([]);
+    const [newReleases, setNewReleases] = useState([]);
+    const [dailyComic, setDailyComic] = useState('');
+    const [characterCount, setCharacterCount] = useState(0);
     
     // useEffect(() => {
     //     // TODO
