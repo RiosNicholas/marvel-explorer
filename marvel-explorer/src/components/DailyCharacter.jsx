@@ -45,7 +45,7 @@ const DailyCharacter = ({ publicKey, secretKey }) => {
                     <img
                         src={`${dailyCharacter.thumbnail.path}.${dailyCharacter.thumbnail.extension}`}
                         alt={dailyCharacter.name}
-                        className="rounded-xl m-1"
+                        className="rounded-xl m-1 lg:w-32"
                     />
                 </div>
             )} 

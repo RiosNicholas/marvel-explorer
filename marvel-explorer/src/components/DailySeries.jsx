@@ -43,7 +43,7 @@ const DailySeries = ({ publicKey, secretKey }) => {
                     <img
                         src={`${dailySeries.thumbnail.path}.${dailySeries.thumbnail.extension}`}
                         alt={dailySeries.title}
-                        className="rounded-xl m-1"
+                        className="rounded-xl m-1 w-40"
                     />
                 </div>
             )} 

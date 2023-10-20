@@ -45,7 +45,7 @@ const DailyComic = ({ publicKey, secretKey }) => {
                     <img
                         src={`${dailyComic.thumbnail.path}.${dailyComic.thumbnail.extension}`}
                         alt={dailyComic.name}
-                        className="rounded-xl m-1"
+                        className="rounded-xl m-1 w-32"
                     />
                 </div>
             )} 
