@@ -5,6 +5,7 @@ import Card from './components/Card'
 import List from './components/List'
 import NavBar from './components/NavBar'
 import DailyCharacter from './components/DailyCharacter';
+import DailyComic from './components/DailyComic'
 
 const CLIENT_PUBLIC = import.meta.env.VITE_APP_CLIENT_PUBLIC; 
 const CLIENT_SECRET = import.meta.env.VITE_APP_CLIENT_SECRET;
@@ -30,6 +31,12 @@ function App() {
           />
           <Card 
             title='Comic of the Day' 
+            content={
+              <DailyComic 
+                publicKey={CLIENT_PUBLIC}
+                secretKey={CLIENT_SECRET}
+              />
+            }
           />
           <Card 
             title='Character Count' 
