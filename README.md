@@ -4,17 +4,17 @@ Submitted by: **Your Name Here**
 
 This web app: **insert description**
 
-Time spent: **15** hours spent in total (includes previous iteration with another API)
+Time spent: **16** hours spent in total (includes previous iteration with another API)
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] **The list displays a list of data fetched using an API call**
-- [ ] **Data uses the useEffect React hook and async/await syntax**
-- [ ] **The app dashboard includes at least three summary statistics about the data such as**
-  - [ ] *insert details*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
+- [x] **The list displays a list of data fetched using an API call**
+- [x] **Data uses the useEffect React hook and async/await syntax**
+- [x] **The app dashboard includes at least three summary statistics about the data such as**
+- [x] *Randomizes suggested titles/characters/series*
+- [x] **A search bar allows the user to search for an item in the fetched data**
 - [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
@@ -42,7 +42,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+ This project is the second iteration of another one that I tried to produce previously. After about 12-13 hours of trying to implement the authentication flow required by the Spotify API, I gave up in place for the Marvel API.
 
 ## License
 
