@@ -14,7 +14,7 @@ const CLIENT_SECRET = import.meta.env.VITE_APP_CLIENT_SECRET;
 function App() {
   return (
     <div className="flex w-screen h-screen">
-      <aside className="bg-red-900 py-10 flex flex-col items-center w-1/4 lg:w-1/6">
+      <aside className="bg-red-900 py-10 flex flex-col items-center h-screen w-1/4 lg:w-1/6">
         <Header />
         <NavBar />
       </aside>
@@ -50,8 +50,9 @@ function App() {
             <Card 
               title='New Releases'
               content={
-                <List />
-                
+                <List 
+                  publicKey={CLIENT_PUBLIC}  
+                />
               }
               className='col-span-3'
             />

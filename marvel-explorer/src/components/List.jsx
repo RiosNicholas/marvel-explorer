@@ -1,54 +1,78 @@
 import { useState, useEffect } from "react";
 
-const List = () => {
-    const [newReleases, setNewReleases] = useState([]);
-    const [dailyComic, setDailyComic] = useState('');
-    const [characterCount, setCharacterCount] = useState(0);
-    
-    // useEffect(() => {
-    //     // TODO
-    //         try {
-    //             // API endpoint for top tracks
-                
-           
-    //         } catch (error) {
-    //             console.error('Error:', error);
-    //         }
-    //     };
-
-    // }, []);
-    
-    return (
-        <>
-            <div className="flex justify-center">
-                <input
-                    type="text"
-                    placeholder="Search top tracks"
-                    className="w-1/2 font-medium italic py-1 px-3 rounded-md shadow-sm shadow-gray-900/20"
-                    //   onChange={(inputString) => searchItems(inputString.target.value)}
-                />
-            </div>
+const List = ({ publicKey }) => {
+  const [newReleases, setNewReleases] = useState([]);
+  
+  useEffect(() => {
+    const fetchNewReleases = async () => {
+        try {
+            const oneMonthAgo = new Date();
+            oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+            const formattedDate = oneMonthAgo.toISOString();
             
-            <table className="my-3">
-                <thead className="border border-red-950 bg-gray-200 text-black">
-                    <tr>
-                        <th className="border-red-950 border">Image</th>
-                        <th className="border border-red-950">Name</th>
-                        <th className="border border-red-950">Series</th>
-                    </tr>
-                </thead>
-                <tbody className="border border-gray-200 text-black bg-white">
-                    {/* {topTracks.map((hero, index) => (
-                        <tr key={hero.id}>
-                            <td className="border border-gray-200 overflow-clip">{hero.thumbnail}</td>
-                            <td className="border border-gray-200 overflow-clip">{hero.name}</td>
-                            <td className="border border-gray-200 overflow-clip">{hero.Series}</td>
-                        </tr>
-                    ))} */}
-                </tbody>
-            </table>
-        </>
-    );
+            // Fetch new releases with a modified date since one month ago
+            const ts = '1';
+            // const hash = md5(ts + secretKey + publicKey);
+            const hash = '4637f3638671ce9485ecb2f0d3211bb5';
+            const response = await fetch(
+                `https://gateway.marvel.com/v1/public/comics?modifiedSince=${formattedDate}&apikey=${publicKey}&ts=${ts}&hash=${hash}`
+                );
+            const data = await response.json();
+
+            // Check if data contains new releases
+            if (data && data.data && data.data.results && data.data.results.length > 0) {
+                const allNewReleases = data.data.results;
+
+                // Sort new releases in descending order based on the modified date
+                allNewReleases.sort((a, b) => new Date(b.modified) - new Date(a.modified));
+                
+                setNewReleases(allNewReleases);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+    
+    fetchNewReleases();
+  }, []);
+
+  return (
+    <div className="max-h-72 overflow-y-auto">
+      <table className="my-3 w-full ">
+        <thead className="border border-gray-300 bg-gray-200 text-black sm:text-lg">
+            <tr>
+                <th className="border-gray-400 border p-2">Image</th>
+                <th className="border-gray-400 border p-2">Title</th>
+                <th className="border-gray-400 border p-2">Release Date</th>
+            </tr>
+        </thead>
+        <tbody className="border border-gray-200 text-black bg-white">
+            {newReleases.map((release, index) => (
+                <tr key={release.id}>
+                    <td className="border border-gray-200 overflow-clip flex justify-center p-1">
+                        <img
+                            src={`${release.thumbnail.path}.${release.thumbnail.extension}`}
+                            alt={release.title}
+                            className="h-14 rounded shadow-sm shadow-black flex"
+                        />
+                    </td>
+                    <td className="border border-gray-200 overflow-clip text-sm font-medium">
+                        {release.title}
+                    </td>
+                    <td className="border border-gray-200 overflow-clip text-sm italic">
+                        {new Date(release.modified).toLocaleDateString(undefined, {
+                            weekday: 'long',
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                        })}
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default List;
