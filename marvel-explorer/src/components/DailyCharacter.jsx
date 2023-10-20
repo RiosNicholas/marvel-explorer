@@ -39,7 +39,7 @@ const DailyCharacter = ({ publicKey, secretKey }) => {
         <>
             {dailyCharacter && (
                 <div className="flex flex-col justify-center items-center">
-                    <h3 className="font-medium italic">
+                    <h3 className="font-medium italic text-lg">
                         {dailyCharacter.name}
                     </h3>
                     <img

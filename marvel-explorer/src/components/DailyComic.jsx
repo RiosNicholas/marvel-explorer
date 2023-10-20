@@ -39,8 +39,8 @@ const DailyComic = ({ publicKey, secretKey }) => {
         <>
             {dailyComic && (
                 <div className="flex flex-col justify-center items-center">
-                    <h3 className="font-medium italic">
-                        {dailyComic.name}
+                    <h3 className="font-medium italic text-lg">
+                        {dailyComic.title}
                     </h3>
                     <img
                         src={`${dailyComic.thumbnail.path}.${dailyComic.thumbnail.extension}`}
