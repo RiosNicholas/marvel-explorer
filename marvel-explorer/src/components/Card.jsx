@@ -4,7 +4,7 @@ const Card = ({ content, title }) => {
             <h2 className="text-3xl font-bold text-left">
                 {title}
             </h2>
-            <div className="flex flex-col justify-center m-4 text-2xl text-center">
+            <div className="flex flex-col justify-center m-2 p-2 text-2xl text-center">
                 {content}
             </div>
         </div>
