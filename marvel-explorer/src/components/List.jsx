@@ -3,19 +3,18 @@ import { useState, useEffect } from "react";
 const List = () => {
     const [heroesList, setHeroesList] = useState([]);
     
-    useEffect(() => {
-        // TODO
-            try {
-                // API endpoint for top tracks
-                const endpoint = 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50';
+    // useEffect(() => {
+    //     // TODO
+    //         try {
+    //             // API endpoint for top tracks
                 
            
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        };
+    //         } catch (error) {
+    //             console.error('Error:', error);
+    //         }
+    //     };
 
-    }, []);
+    // }, []);
     
     return (
         <>
@@ -29,7 +28,7 @@ const List = () => {
             </div>
             
             <table className="my-3">
-                <thead className="border border-red-950 bg-red-800 text-white">
+                <thead className="border border-red-950 bg-gray-200 text-black">
                     <tr>
                         <th className="border-red-950 border">Image</th>
                         <th className="border border-red-950">Name</th>
@@ -37,13 +36,13 @@ const List = () => {
                     </tr>
                 </thead>
                 <tbody className="border border-gray-200 text-black bg-white">
-                    {topTracks.map((hero, index) => (
+                    {/* {topTracks.map((hero, index) => (
                         <tr key={hero.id}>
                             <td className="border border-gray-200 overflow-clip">{hero.thumbnail}</td>
                             <td className="border border-gray-200 overflow-clip">{hero.name}</td>
                             <td className="border border-gray-200 overflow-clip">{hero.Series}</td>
                         </tr>
-                    ))}
+                    ))} */}
                 </tbody>
             </table>
         </>

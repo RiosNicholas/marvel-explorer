@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="flex w-screen h-screen">
-      <aside className="bg-red-700 bg-opacity-40 py-10 flex flex-col items-center w-1/4 lg:w-1/6">
+      <aside className="bg-red-900 py-10 flex flex-col items-center w-1/4 lg:w-1/6">
         <Header />
         <NavBar />
       </aside>
