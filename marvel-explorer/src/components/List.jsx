@@ -56,7 +56,7 @@ const List = ({ publicKey }) => {
                 onChange={(e) => searchItems(e.target.value)}
             />
         </div>
-        <div classNakme="max-h-72 overflow-y-auto">
+        <div className="max-h-72 overflow-y-auto">
             <table className="my-3 w-full ">
                 <thead className="border border-gray-300 bg-gray-200 text-black sm:text-lg">
                     <tr>
@@ -65,7 +65,7 @@ const List = ({ publicKey }) => {
                         <th className="border-gray-400 border p-2">Release Date</th>
                     </tr>
                 </thead>
-                <tbody className="border border-gray-200 text-black bg-white">
+                <tbody className="border border-gray-200 text-black bg-white max-h-72 overflow-y-auto">
                     {filteredReleases.map((release, index) => (
                         <tr key={release.id}>
                             <td className="border border-gray-200 overflow-clip flex justify-center p-1">
