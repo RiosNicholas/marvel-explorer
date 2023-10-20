@@ -4,7 +4,7 @@ Submitted by: **Your Name Here**
 
 This web app: **insert description**
 
-Time spent: **3** hours spent in total + **10** hours in the previous iteration using Spotify API
+Time spent: **15** hours spent in total (includes previous iteration with another API)
 
 ## Required Features
 
