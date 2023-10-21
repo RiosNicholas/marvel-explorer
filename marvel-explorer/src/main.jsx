@@ -8,15 +8,14 @@ import DetailView from '../routes/DetailView';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index={true} element={<App />} />
+          <Route index={true} path="releaseDetails/:id" element={<DetailView />} />    
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index={true} element={<App />} />
-        <Route index={false} path="/releaseDetails/:title" element={<DetailView />} />    
-      </Route>
-    </Routes>
-  </BrowserRouter>
 )
 
