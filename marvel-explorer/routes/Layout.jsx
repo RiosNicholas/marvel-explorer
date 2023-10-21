@@ -2,11 +2,11 @@ import { Outlet, Link } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div>
-      <nav className="fixed top-0 left-0">
+    <div className="z-10 relative">
+      <nav className="fixed top-0 right-0 bg-red-900 p-2">
         <ul>
-          <li className="home-link" key="home-button">
-            <Link className="border border-dotted border-white w-20" to="/">
+          <li className="" key="home-button">
+            <Link className="m-2 px-3 py-1 rounded border  border-white text-black text-lg bg-white w-20" to="/">
               Home
             </Link>
           </li>
