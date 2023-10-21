@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const List = ({ publicKey }) => {
     const [newReleases, setNewReleases] = useState([]);
@@ -76,7 +77,9 @@ const List = ({ publicKey }) => {
                                 />
                             </td>
                             <td className="border border-gray-200 overflow-clip text-sm font-medium">
-                                {release.title}
+                                <Link to={`/detailView/${release.id}`}>
+                                    {release.title}
+                                </Link>
                             </td>
                             <td className="border border-gray-200 overflow-clip text-sm italic">
                                 {new Date(release.modified).toLocaleDateString(undefined, {
