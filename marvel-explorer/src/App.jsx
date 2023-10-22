@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import DailyCharacter from './components/DailyCharacter';
 import DailyComic from './components/DailyComic'
 import DailySeries from './components/DailySeries';
+import CharacterPopularity from './components/CharacterPopularity';
 
 const CLIENT_PUBLIC = import.meta.env.VITE_APP_CLIENT_PUBLIC; 
 const CLIENT_SECRET = import.meta.env.VITE_APP_CLIENT_SECRET;
@@ -46,7 +47,14 @@ function App() {
               />
             }
           />
-          <div className="col-span-3">
+
+          <Card 
+            title='Top Characters' 
+            content={
+              <CharacterPopularity />
+            }
+          />
+          <div className="col-span-4">
             <Card 
               title='New Releases'
               content={
@@ -54,7 +62,7 @@ function App() {
                   publicKey={CLIENT_PUBLIC}  
                 />
               }
-              className='col-span-3'
+              className='col-span-4'
             />
           </div> 
       </main>
