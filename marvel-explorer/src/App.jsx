@@ -18,7 +18,7 @@ function App() {
         <Header />
         <NavBar />
       </aside>
-      <main className="mx-10 my-4 grid grid-cols-3 gap-4 w-3/4 lg:w-5/6">
+      <main className="mx-10 my-4 grid grid-cols-3 gap-4 w-3/4 lg:w-5/6 overflow-y-auto">
           <Card 
             title='Character of the Day' 
             content={
