@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='2023-10-21 20-42-56' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='2023-10-21 20-42-56.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
